@@ -1,4 +1,5 @@
 const express = require("express");
+const storyRoute = require("../modules/story/route");
 
 // Setup Variables
 const port = 4000;
@@ -7,11 +8,13 @@ const server = async () => {
   // Create an express app
   const app = express();
 
-  // routes
-  app.post("/story", (req, res) => {
-      res.send(`<h1>Hey, story here</h1>
-      <video controls></video>`);
-  });
+  // Configuration
+  app.use(express.urlencoded());
+  app.use(express.json()),
+    
+    
+    // routes
+    app.use("/story", storyRoute)
 
   app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

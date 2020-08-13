@@ -1,8 +1,8 @@
-const server=require("./infra/server")
+const server = require("./infra/server");
 
 const main = async () => {
     // Start Server
-    await server()
+    await server();
 };
 
 main();
